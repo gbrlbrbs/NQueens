@@ -17,7 +17,7 @@ class DESolver(Solver):
         self.genomes: list[list[int]] = [np.random.randint(1, num_queens+1, size=num_queens).tolist() for _ in range(self.genome_number)]
 
     def generate_donor(self, g1: list[int], g2: list[int], g3: list[int]):
-        bound_value = lambda x: 8 if x > 8 else x if x >= 0 else 0
+        bound_value = lambda x: 8 if x > 8 else x if x > 0 else 1
         donor: list[int] = []
         g_len = len(g1)
 
